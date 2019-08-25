@@ -18,9 +18,16 @@ public class Product {
 
     @NotNull
     @NotEmpty
+    @Column(name = "product_barcode")
+    private String barcode;
+
+    @NotNull
+    @NotEmpty
     @Column(name = "product_desc")
     private String desc;
 
+    @NotNull
+    @NotEmpty
     @Column(name = "company_name")
     private String companyName;
 
@@ -61,6 +68,14 @@ public class Product {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
     }
 
     public String getDesc() {
@@ -163,6 +178,7 @@ public class Product {
     public String toString() {
         return "Product{" +
                 "productId=" + productId +
+                ", barcode='" + barcode + '\'' +
                 ", desc='" + desc + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", width=" + width +

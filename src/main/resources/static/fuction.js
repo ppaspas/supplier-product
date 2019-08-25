@@ -70,6 +70,7 @@ console.log($('#supplier1').length);
 
         function addProduct(){
                     var $productId = $('#productId');
+                    var $barcode = $('#barcode');
                     var $desc = $('#desc');
                     var $companyName = $('#companyName');
                     var $width = $('#width');
@@ -85,6 +86,7 @@ console.log($('#supplier1').length);
                     console.log("length"+ $length);
                     var modelObj = {
                         productId : $productId.val(),
+                        barcode : $barcode.val(),
                         desc: $desc.val(),
                         companyName: $companyName.val(),
                         width: $width.val(),
@@ -96,7 +98,7 @@ console.log($('#supplier1').length);
                         buyingPrice: $buyingPrice.val(),
                         sellingPrice: $sellingPrice.val(),
                         margin: $margin.val(),
-                        profitFactor: $profitFactor.val(),
+                        profitFactor: $profitFactor.val()
                     };
                     console.log(modelObj);
                     $.ajax({
@@ -111,6 +113,29 @@ console.log($('#supplier1').length);
                             }
                      });
         }
+
+        function deleteSupplier() {
+
+                       var $supplierId = $('#supplierId');
+                       $.ajax({
+                           type: "GET",
+                           url: "/suppliers/delete/" + $supplierId.val(),
+
+                           success: function (newSupplier) {
+                            console.log("fff" + $('#supplierId').val());
+                               $supplierId.val('');
+                               ('#company').val('');
+                               ('#contactPerson').val('');
+                               ('#phoneNumber').val('');
+                               ('#email').val('');
+                               console.log( $('#company').val());
+                               },
+                           error: function () {
+                                   alert('error deleting data in database');
+                               }
+
+                        });
+                }
 
 
         function createExcel(){
