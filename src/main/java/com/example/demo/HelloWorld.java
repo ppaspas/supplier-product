@@ -25,7 +25,9 @@ public class HelloWorld  {
     @Autowired
     ProductRepo productRepo;
 
+
     @RequestMapping("/")
+    @CrossOrigin(origins = "*")
     public String index(){
 
         return "<html>\n" +
@@ -43,13 +45,15 @@ public class HelloWorld  {
         return "2";
     }
 
-    //@CrossOrigin(origins = "http://localhost:8080")
+
     @GetMapping("/suppliers/all")
+    @CrossOrigin(origins = "*")
     public List<Supplier> allSupplier(){
         return supplierRepo.findAll();
     }
 
     @PostMapping(value ="/suppliers/save", consumes = "application/x-www-form-urlencoded")
+    @CrossOrigin(origins = "*")
     public Supplier createSupplier(Supplier data){
         supplierRepo.save(data);
 
@@ -57,6 +61,7 @@ public class HelloWorld  {
     }
 
     @PostMapping(value ="/suppliers/save", consumes = "application/json")
+    @CrossOrigin(origins = "*")
     public Supplier createSupplierPost(@RequestBody  Supplier data){
         supplierRepo.save(data);
 
@@ -64,6 +69,7 @@ public class HelloWorld  {
     }
 
     @GetMapping("/suppliers/supplier/{id}")
+    @CrossOrigin(origins = "*")
     public Supplier showSupplier(@PathVariable String id){
             Long newId = Long.parseLong(id);
 
@@ -72,11 +78,13 @@ public class HelloWorld  {
     }
 
     @GetMapping("/suppliers/delete/{id}")
+    @CrossOrigin(origins = "*")
     public void deleteSupplier (@PathVariable String id) {
         supplierRepo.deleteById(Long.parseLong(id));
     }
 
     @GetMapping("/suppliers/products/excel")
+    @CrossOrigin(origins = "*")
     public void getSupplierExcel() throws Exception{
         List<Supplier> suppliers = allSupplier();
         List<Product> products = allProduct();
@@ -96,11 +104,13 @@ public class HelloWorld  {
 
 
     @GetMapping("/products/all")
+    @CrossOrigin(origins = "*")
     public List<Product> allProduct(){
         return productRepo.findAll();
     }
 
     @PostMapping(value ="/products/save", consumes = "application/json")
+    @CrossOrigin(origins = "*")
     public Product createProductPost(@RequestBody Product data){
 
          productRepo.save(data);
@@ -108,6 +118,7 @@ public class HelloWorld  {
     }
 
     @PostMapping(value ="/products/save", consumes = "application/x-www-form-urlencoded")
+    @CrossOrigin(origins = "*")
     public Product createProduct(Product data){
 
         productRepo.save(data);
@@ -115,6 +126,7 @@ public class HelloWorld  {
     }
 
     @GetMapping("/products/product/{id}")
+    @CrossOrigin(origins = "*")
     public Product showProduct(@PathVariable String id) {
 
             Long productId = Long.parseLong(id);
@@ -124,6 +136,7 @@ public class HelloWorld  {
     }
 
     @GetMapping("/products/delete/{id}")
+    @CrossOrigin(origins = "*")
     public void deleteProduct(@PathVariable String id){
         productRepo.deleteById(Long.parseLong(id));
     }
