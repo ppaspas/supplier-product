@@ -43,8 +43,20 @@ public class Product {
     @Column(name = "weight")
     private Double weight;
 
-    @Column(name = "quantity")
+    @Column(name = "quantity_pack")
     private String quantityPerPack;
+
+    @Column(name = "width_pack")
+    private Double widthPerPack;
+
+    @Column(name = "length_pack")
+    private Double lengthPerPack;
+
+    @Column(name = "height_pack")
+    private Double heightPerPack;
+
+    @Column(name = "weight_pack")
+    private Double weightPerPack;
 
     @Column(name = "shelf_life")
     private String shelfLife;
@@ -174,6 +186,39 @@ public class Product {
         this.profitFactor = profitFactor;
     }
 
+
+    public Double getWidthPerPack() {
+        return widthPerPack;
+    }
+
+    public void setWidthPerPack(Double widthPerPack) {
+        this.widthPerPack = widthPerPack;
+    }
+
+    public Double getLengthPerPack() {
+        return lengthPerPack;
+    }
+
+    public void setLengthPerPack(Double lengthPerPack) {
+        this.lengthPerPack = lengthPerPack;
+    }
+
+    public Double getHeightPerPack() {
+        return heightPerPack;
+    }
+
+    public void setHeightPerPack(Double heightPerPack) {
+        this.heightPerPack = heightPerPack;
+    }
+
+    public Double getWeightPerPack() {
+        return weightPerPack;
+    }
+
+    public void setWeightPerPack(Double weightPerPack) {
+        this.weightPerPack = weightPerPack;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -186,6 +231,10 @@ public class Product {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", quantityPerPack='" + quantityPerPack + '\'' +
+                ", widthPerPack=" + widthPerPack +
+                ", lengthPerPack=" + lengthPerPack +
+                ", heightPerPack=" + heightPerPack +
+                ", weightPerPack=" + weightPerPack +
                 ", shelfLife='" + shelfLife + '\'' +
                 ", buyingPrice=" + buyingPrice +
                 ", sellingPrice='" + sellingPrice + '\'' +
