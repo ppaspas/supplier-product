@@ -73,6 +73,17 @@ public class Product {
     @Column(name = "profit_factor")
     private String profitFactor;
 
+    public String getMoq() {
+        return moq;
+    }
+
+    public void setMoq(String moq) {
+        this.moq = moq;
+    }
+
+    @Column(name = "moq")
+    private String moq;
+
 
     public Long getProductId() {
         return productId;
@@ -240,6 +251,7 @@ public class Product {
                 ", sellingPrice='" + sellingPrice + '\'' +
                 ", margin=" + margin +
                 ", profitFactor='" + profitFactor + '\'' +
+                ", moq='" + moq + '\'' +
                 '}';
     }
 }
