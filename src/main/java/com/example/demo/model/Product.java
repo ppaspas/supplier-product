@@ -43,17 +43,8 @@ public class Product {
     @Column(name = "weight")
     private Double weight;
 
-    @Column(name = "quantity/pack")
+    @Column(name = "quantity")
     private String quantityPerPack;
-
-    @Column(name = "width/pack")
-    private Double widthPerPack;
-
-    @Column(name = "length/pack")
-    private Double lengthPerPack;
-
-    @Column(name = "height/pack")
-    private Double heightPerpack;
 
     @Column(name = "shelf_life")
     private String shelfLife;
@@ -183,30 +174,6 @@ public class Product {
         this.profitFactor = profitFactor;
     }
 
-    public Double getWidthPerPack() {
-        return widthPerPack;
-    }
-
-    public void setWidthPerPack(Double widthPerPack) {
-        this.widthPerPack = widthPerPack;
-    }
-
-    public Double getLengthPerPack() {
-        return lengthPerPack;
-    }
-
-    public void setLengthPerPack(Double lengthPerPack) {
-        this.lengthPerPack = lengthPerPack;
-    }
-
-    public Double getHeightPerpack() {
-        return heightPerpack;
-    }
-
-    public void setHeightPerpack(Double heightPerpack) {
-        this.heightPerpack = heightPerpack;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
@@ -219,9 +186,6 @@ public class Product {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", quantityPerPack='" + quantityPerPack + '\'' +
-                ", widthPerPack=" + widthPerPack +
-                ", lengthPerPack=" + lengthPerPack +
-                ", heightPerpack=" + heightPerpack +
                 ", shelfLife='" + shelfLife + '\'' +
                 ", buyingPrice=" + buyingPrice +
                 ", sellingPrice='" + sellingPrice + '\'' +
