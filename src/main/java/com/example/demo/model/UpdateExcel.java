@@ -18,7 +18,8 @@ public class UpdateExcel {
 
     public static void setSupplierExcel(List<Supplier> suppliers, List<Product> products) throws Exception{
         String excelFilePath = "src/main/resources/templates/excelTemplate.xlsx";
-        String outputPath = "src/main/resources/supplier.xlsx";
+        String outputPath = "src/main/resources/static/supplier.xlsx";
+
 
         try {
             FileInputStream inputStream = new FileInputStream(excelFilePath);
@@ -31,7 +32,7 @@ public class UpdateExcel {
                     for (Supplier supplier : suppliers) {
                         XSSFRow row = sheet.createRow(++rowCount);
                         row.createCell(0).setCellValue(supplier.getSupplierId());
-                        row.createCell(1).setCellValue(supplier.getCompany());
+                        row.createCell(1).setCellValue(supplier.getSupplier());
                         row.createCell(2).setCellValue(supplier.getContactPerson());
                         row.createCell(3).setCellValue(supplier.getPhoneNumber());
                         row.createCell(4).setCellValue(supplier.getEmail());
@@ -46,8 +47,8 @@ public class UpdateExcel {
                         int rowCount = sheet.getLastRowNum();
                         XSSFRow row = sheet.createRow(++rowCount);
                         row.createCell(0).setCellValue(product.getProductId());
-                        row.createCell(1).setCellValue(product.getDesc());
-                        row.createCell(2).setCellValue(product.getCompanyName());
+                        row.createCell(1).setCellValue(product.getProductDesc());
+                        row.createCell(2).setCellValue(product.getSupplier());
                         if (product.getWidth() != null) {
                             row.createCell(4).setCellValue(product.getWidth());
                         } else {
