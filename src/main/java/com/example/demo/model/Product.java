@@ -21,15 +21,24 @@ public class Product {
     @Column(name = "product_barcode")
     private String barcode;
 
-    @NotNull
-    @NotEmpty
-    @Column(name = "product_desc")
-    private String desc;
 
     @NotNull
     @NotEmpty
-    @Column(name = "company_name")
-    private String companyName;
+    @Column(name = "product_type")
+    private String productType;
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "product_name")
+    private String productName;
+
+    @Column(name = "product_desc")
+    private String productDesc;
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "supplier_name")
+    private String supplier;
 
     @Column(name = "width")
     private Double width;
@@ -73,13 +82,6 @@ public class Product {
     @Column(name = "profit_factor")
     private String profitFactor;
 
-    public String getMoq() {
-        return moq;
-    }
-
-    public void setMoq(String moq) {
-        this.moq = moq;
-    }
 
     @Column(name = "moq")
     private String moq;
@@ -101,20 +103,38 @@ public class Product {
         this.barcode = barcode;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getProductType() {
+        return productType;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
-    public String getCompanyName() {
-        return companyName;
+
+    public String getProductName() {
+        return productName;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+
+    public String getProductDesc() {
+        return productDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
+    }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public Double getWidth() {
@@ -230,13 +250,24 @@ public class Product {
         this.weightPerPack = weightPerPack;
     }
 
+
+    public String getMoq() {
+        return moq;
+    }
+
+    public void setMoq(String moq) {
+        this.moq = moq;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "productId=" + productId +
                 ", barcode='" + barcode + '\'' +
-                ", desc='" + desc + '\'' +
-                ", companyName='" + companyName + '\'' +
+                ", productType='" + productType + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productDesc='" + productDesc + '\'' +
+                ", supplier='" + supplier + '\'' +
                 ", width=" + width +
                 ", length=" + length +
                 ", height=" + height +

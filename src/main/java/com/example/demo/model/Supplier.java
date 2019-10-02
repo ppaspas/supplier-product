@@ -17,8 +17,8 @@ public class Supplier  {
 
     @NotNull
     @NotEmpty
-    @Column(name="company_name")
-    private String company;
+    @Column(name="supplier_name")
+    private String supplier;
 
     @Column(name="contact_person")
     private String contactPerson;
@@ -37,9 +37,9 @@ public class Supplier  {
 //        this.email = email;
 //    }
 
-    public Supplier(String company, String contactPerson, String  phoneNumber, String email) {
+    public Supplier(String supplier, String contactPerson, String  phoneNumber, String email) {
 
-        this.company = company;
+        this.supplier = supplier;
         this.contactPerson = contactPerson;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -57,12 +57,12 @@ public class Supplier  {
         this.supplierId = supplierId;
     }
 
-    public String getCompany() {
-        return company;
+    public String getSupplier() {
+        return supplier;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
     }
 
     public String getContactPerson() {
@@ -93,7 +93,7 @@ public class Supplier  {
     public String toString() {
         return "Supplier{" +
                 "supplierId='" + supplierId + '\'' +
-                ", company='" + company + '\'' +
+                ", supplier='" + supplier + '\'' +
                 ", contactPerson='" + contactPerson + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
