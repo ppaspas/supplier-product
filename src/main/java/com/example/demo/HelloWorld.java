@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.model.Product;
-import com.example.demo.model.ProductRepo;
-import com.example.demo.model.Supplier;
-import com.example.demo.model.SupplierRepo;
+import com.example.demo.model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,6 +47,12 @@ public class HelloWorld  {
     @CrossOrigin(origins = "*")
     public List<Supplier> allSupplier(){
         return supplierRepo.findAll();
+    }
+
+    @GetMapping("/suppliers/all/name")
+    @CrossOrigin(origins = "*")
+    public List<NameOnly> allSupplierName(){
+        return supplierRepo.findAllBy();
     }
 
     @PostMapping(value ="/suppliers/save", consumes = "application/x-www-form-urlencoded")
